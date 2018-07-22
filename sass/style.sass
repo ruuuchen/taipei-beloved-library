@@ -11,9 +11,10 @@ $infos_size: 12px
 $note_size: 10px
 
 *
-  // border: solid 1px red
+  border: solid 1px red
   box-sizing: border-box
   position: relative
+  font-family: "Cabin",sans-serif,"LiHei Pro Medium","微軟正黑體"
   letter-spacing: 1.5px
 
 html,body
@@ -25,7 +26,7 @@ html,body
 body
   border: solid 15px $blue_color
   height: 100%
-  
+
 header
   position: fixed
   height: 100%
@@ -36,8 +37,8 @@ header
   z-index: 2
   & span
     padding: 15px 0px 0px 0px
-    
-// 主要內容頁    
+
+// 主要內容頁
 .main_area
   max-width: calc(100% - 300px)
   height: 100%
@@ -52,7 +53,7 @@ header
       width: 100%
       min-width: 280px
       margin: 0px auto
-      
+
 // 內容區塊
 .list
   max-width: 650px
@@ -61,15 +62,15 @@ header
   padding: 15px
   background-color: $white_color
   box-shadow: 2px 0px 10px -5px black
-  
+
 .list.content
   margin: -80px auto 100px auto
   background-color: $blue_color
   font-size: $intro_size
   line-height: 25px
-  color: white  
+  color: white
   transition-duration: 0.2s
-  
+
 .list.bookstores
   display: flex
   justify-content: center
@@ -98,14 +99,14 @@ header
   & .tag
     display: inline-block
     margin-bottom: 10px
-    & a  
+    & a
       padding: 0px 10px
       text-decoration: none
       color: $blue_color
       &:hover
         color: $orange_color
-    
-// 書店內容  
+
+// 書店內容
 .name_tag
   display: flex
   justify-content: center
@@ -114,14 +115,14 @@ header
   top: -25px
   box-shadow: 5px 0px 20px -10px black
   & i
-    padding: 5px 5px 0px 0px  
+    padding: 5px 5px 0px 0px
     color: $blue_color
   & .name
     padding: 2px 15px
     font-size: $title_size
     background-color: $blue_color
     color: white
-    
+
 .left
   width: 70%
   padding: 40px 40px 30px 40px
@@ -146,18 +147,18 @@ header
     margin-top: 10px
     & .fb,& .web
       width: 20px
-      height: 20px 
+      height: 20px
       font-size: $infos_size
       text-align: center
       border: solid 1px $blue_color
       color: $blue_color
       border-radius: 50%
-      margin-right: 10px 
+      margin-right: 10px
       &:hover
         border: solid 1px $orange_color
-        background-color: $orange_color 
+        background-color: $orange_color
         color: $white_color
-      
+
 .right
   width: 30%
   background-color: $blue_color
@@ -165,7 +166,7 @@ header
   & .contact
     font-size: $infos_size
     position: absolute
-    bottom: 30px 
+    bottom: 30px
     color: white
     & .phone,& .mail
       padding: 2px 0px
@@ -178,14 +179,14 @@ header
       font-size: $note_size
       vertical-align: middle
 
-// 地圖      
-#map 
+// 地圖
+#map
   width: 100%
   min-width: 280px
   height: 550px
   margin: 0px auto
 
-// 頁尾      
+// 頁尾
 footer
   width: 70%
   margin: 70px auto 0px auto
@@ -195,8 +196,8 @@ footer
   color: $blue_color
   text-align: center
 
-// 標誌  
-.dot  
+// 標誌
+.dot
   width: 50px
   height: 50px
   background-color: $blue_color
@@ -216,11 +217,11 @@ footer
   &:hover
     background-color: $orange_color
     & i
-      transform: translateX(-50%) translateY(-50%) rotate(180deg) 
-    
-.move_top i  
-  transform: translateX(-50%) translateY(-50%) rotate(180deg) 
-    
+      transform: translateX(-50%) translateY(-50%) rotate(180deg)
+
+.move_top i
+  transform: translateX(-50%) translateY(-50%) rotate(180deg)
+
 @keyframes ani
   0%
     top: 50%
@@ -230,11 +231,11 @@ footer
     top: 50%
   75%
     top: 55%
-  100% 
+  100%
     top: 50%
-  
-// RWD  
-@media screen and (max-width: 999px) 
+
+// RWD
+@media screen and (max-width: 999px)
   header
     height: 150px
     width: 100%
@@ -242,18 +243,18 @@ footer
     padding: 30px
     text-align: center
     & h1
-      margin: 0px  
+      margin: 0px
       font-size: 28px
     & h4
-      font-size: 14px  
+      font-size: 14px
       margin: 15px 0px
       & span
-        padding: 0px 0px 0px 15px  
-  .main_area 
+        padding: 0px 0px 0px 15px
+  .main_area
     max-width: 100%
     height: calc(100% - 150px)
     margin: 150px 0px 0px 0px
-    padding: 90px 0px 0px 0px 
+    padding: 90px 0px 0px 0px
   .list.bookstores
     &:hover
       margin-left: calc(100% / 15)
@@ -271,9 +272,9 @@ footer
       background-color: white
       border: solid 3px $orange_color
       & i
-        color: $orange_color 
-      
-@media screen and (max-width: 680px)        
+        color: $orange_color
+
+@media screen and (max-width: 680px)
   html,body
     height: auto
   header
@@ -284,7 +285,7 @@ footer
     & h1
       font-size: 24px
     & h4
-      font-size: 14px  
+      font-size: 14px
   .main_area
     padding: 0px
     margin: 0px
@@ -298,7 +299,7 @@ footer
     box-shadow: none
   .list.bookstores
     display: flex
-    flex-direction: column 
+    flex-direction: column
     & .left
       width: 100%
       padding: 40px 18px 30px 18px
@@ -309,7 +310,7 @@ footer
         bottom: 10px
     &:hover
       margin-left: calc(100% / 15)
-  .name_tag 
+  .name_tag
     left: 15px
     top: -15px
     & .name
@@ -317,7 +318,7 @@ footer
   .left p
     margin-bottom: 20px
   .dot
-    top: 400px 
+    top: 400px
     &:hover
       & i
         transform: translateX(-50%) translateY(-50%) rotate(0deg)
