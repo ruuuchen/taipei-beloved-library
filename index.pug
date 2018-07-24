@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 html(lang="en")
-head
-  meta(charset="UTF-8")
-  title Beloved Library in Taipei
+  head
+    meta(charset="UTF-8")
+    title Beloved Library in Taipei
 
-  link(rel="stylesheet prefetch", href="https://use.fontawesome.com/releases/v5.0.12/css/all.css")
-  link(rel="stylesheet", href="css/style.css")
+    link(rel="stylesheet prefetch", href="https://use.fontawesome.com/releases/v5.0.12/css/all.css")
+    link(rel="stylesheet", href="css/style.css")
 
-  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYrmvf8Pg0awTHB4UQxjjymENhg717Qk&callback=initMap")
+  body
+    header
+      h1 私房的圖書館探索
+      h4 我心裡一直在暗暗設想，天堂應該是圖書館的模樣。<span>——波赫士
+    .main_area
+      section#brief_area
+        img.cover(src="https://c.pxhere.com/photos/c4/58/street_leica_people_white_black_photography_flickr_sitting-418667.jpg!d", alt="")
+        .list.content
+          p 致敬那些為我們創造閱讀空間的人，但你知道我們可以享受閱讀的地方不只有書店嗎？<br>波赫士說天堂應該是圖書館的樣子，現在真的有人把這個「天堂」帶進城市裡了！<br>隱身在城市中的私人圖書館，走進空間中擺滿絕版雜誌、來自全世界的繪本、貴到捨不得買下去的精裝書都可借閱；窩進去就瞬間被療癒的沙發、無限量供應的飲料……這根本就是夏日天堂啊！<br>反正，這些書店沒有的，圖書館（天堂）通通可以滿足你。
 
-body
-  header
-    h1 私房的圖書館探索
-    h4 我心裡一直在暗暗設想，天堂應該是圖書館的模樣。<span>——波赫士
-  .main_area
-    section#brief_area
-      img.cover(src="https://c.pxhere.com/photos/c4/58/street_leica_people_white_black_photography_flickr_sitting-418667.jpg!d", alt="")
-      .list.content
-        p 致敬那些為我們創造閱讀空間的人，但你知道我們可以享受閱讀的地方不只有書店嗎？<br>波赫士說天堂應該是圖書館的樣子，現在真的有人把這個「天堂」帶進城市裡了！<br>隱身在城市中的私人圖書館，走進空間中擺滿絕版雜誌、來自全世界的繪本、貴到捨不得買下去的精裝書都可借閱；窩進去就瞬間被療癒的沙發、無限量供應的飲料……這根本就是夏日天堂啊！<br>反正，這些書店沒有的，圖書館（天堂）通通可以滿足你。
+      section#list_area
+        .list.mini
+          h2 走吧！台北值得拜訪的八家特色圖書館。
+          .hrline
+          template(v-for="item in items" track-by="$index")
+            .tag
+              a(href="#{{item.id}}") {{item.name}}
+              span /
+        .list.bookstores(v-for="item in items" track-by="$index")
+          .name_tag(id="{{item.id}}")
+            i.fas.fa-quote-right
+            .name {{item.name}}
+          .left
+            p {{item.intro}}
+            .infos
+              li Address
+              span {{item.addr}}
+              br
+              li Open-time
+              span {{item.open}}
+            .links
+              a.fb(v-bind:href="item.fb" target="_blank")
+                i.fab.fa-facebook-f
+              a.web(v-bind:href="item.web" target="_blank")
+                i.fas.fa-ellipsis-h
+          .right
+            .contact
+              .phone
+                i.fas.fa-phone-square
+                span {{item.tel}}
+              .mail
+                i.fas.fa-envelope-square
+                span {{item.email}}
+      section
+        #map
+      footer
+        p 資料來源：雜學校｜Za Share
+    a.dot.move_top(href="#brief_area")
+      i.fas.fa-angle-down
 
-    section#list_area
-      .list.mini
-        h2 走吧！台北值得拜訪的八家特色圖書館。
-        .hrline
-        template(v-for="item in items" track-by="$index")
-          .tag
-            a(href="#{{item.id}}") {{item.name}}
-            span /
-      .list.bookstores(v-for="item in items" track-by="$index")
-        .name_tag(id="{{item.id}}")
-          i.fas.fa-quote-right
-          .name {{item.name}}
-        .left
-          p {{item.intro}}
-          .infos
-            li Address
-            span {{item.addr}}
-            br
-            li Open-time
-            span {{item.open}}
-          .links
-            a.fb(v-bind:href="item.fb" target="_blank")
-              i.fab.fa-facebook-f
-            a.web(v-bind:href="item.web" target="_blank")
-              i.fas.fa-ellipsis-h
-        .right
-          .contact
-            .phone
-              i.fas.fa-phone-square
-              span {{item.tel}}
-            .mail
-              i.fas.fa-envelope-square
-              span {{item.email}}
-    section
-      #map
-    footer
-      p 資料來源：雜學校｜Za Share
-  a.dot.move_top(href="#brief_area")
-    i.fas.fa-angle-down
-
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js")
-  script(src="js/index.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js")
+    script(src="js/index.js")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYrmvf8Pg0awTHB4UQxjjymENhg717Qk&callback=initMap")

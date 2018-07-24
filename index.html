@@ -1,59 +1,60 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<head>
-  <meta charset="UTF-8"/>
-  <title>Beloved Library in Taipei</title>
-  <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYrmvf8Pg0awTHB4UQxjjymENhg717Qk&amp;callback=initMap"></script>
-</head>
-<body>
-  <header>
-    <h1>私房的圖書館探索</h1>
-    <h4>我心裡一直在暗暗設想，天堂應該是圖書館的模樣。<span>——波赫士</h4>
-  </header>
-  <div class="main_area">
-    <section id="brief_area"><img class="cover" src="https://c.pxhere.com/photos/c4/58/street_leica_people_white_black_photography_flickr_sitting-418667.jpg!d" alt=""/>
-      <div class="list content">
-        <p>致敬那些為我們創造閱讀空間的人，但你知道我們可以享受閱讀的地方不只有書店嗎？<br>波赫士說天堂應該是圖書館的樣子，現在真的有人把這個「天堂」帶進城市裡了！<br>隱身在城市中的私人圖書館，走進空間中擺滿絕版雜誌、來自全世界的繪本、貴到捨不得買下去的精裝書都可借閱；窩進去就瞬間被療癒的沙發、無限量供應的飲料……這根本就是夏日天堂啊！<br>反正，這些書店沒有的，圖書館（天堂）通通可以滿足你。</p>
-      </div>
-    </section>
-    <section id="list_area">
-      <div class="list mini">
-        <h2>走吧！台北值得拜訪的八家特色圖書館。</h2>
-        <div class="hrline"></div>
-        <template v-for="item in items" track-by="$index">
-          <div class="tag"><a href="#{{item.id}}">{{item.name}}</a><span>/</span></div>
-        </template>
-      </div>
-      <div class="list bookstores" v-for="item in items" track-by="$index">
-        <div class="name_tag" id="{{item.id}}"><i class="fas fa-quote-right"></i>
-          <div class="name">{{item.name}}</div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Beloved Library in Taipei</title>
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <header>
+      <h1>私房的圖書館探索</h1>
+      <h4>我心裡一直在暗暗設想，天堂應該是圖書館的模樣。<span>——波赫士</h4>
+    </header>
+    <div class="main_area">
+      <section id="brief_area"><img class="cover" src="https://c.pxhere.com/photos/c4/58/street_leica_people_white_black_photography_flickr_sitting-418667.jpg!d" alt=""/>
+        <div class="list content">
+          <p>致敬那些為我們創造閱讀空間的人，但你知道我們可以享受閱讀的地方不只有書店嗎？<br>波赫士說天堂應該是圖書館的樣子，現在真的有人把這個「天堂」帶進城市裡了！<br>隱身在城市中的私人圖書館，走進空間中擺滿絕版雜誌、來自全世界的繪本、貴到捨不得買下去的精裝書都可借閱；窩進去就瞬間被療癒的沙發、無限量供應的飲料……這根本就是夏日天堂啊！<br>反正，這些書店沒有的，圖書館（天堂）通通可以滿足你。</p>
         </div>
-        <div class="left">
-          <p>{{item.intro}}</p>
-          <div class="infos">
-            <li>Address</li><span>{{item.addr}}</span><br/>
-            <li>Open-time</li><span>{{item.open}}</span>
+      </section>
+      <section id="list_area">
+        <div class="list mini">
+          <h2>走吧！台北值得拜訪的八家特色圖書館。</h2>
+          <div class="hrline"></div>
+          <template v-for="item in items" track-by="$index">
+            <div class="tag"><a href="#{{item.id}}">{{item.name}}</a><span>/</span></div>
+          </template>
+        </div>
+        <div class="list bookstores" v-for="item in items" track-by="$index">
+          <div class="name_tag" id="{{item.id}}"><i class="fas fa-quote-right"></i>
+            <div class="name">{{item.name}}</div>
           </div>
-          <div class="links"><a class="fb" v-bind:href="item.fb" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="web" v-bind:href="item.web" target="_blank"><i class="fas fa-ellipsis-h"></i></a></div>
-        </div>
-        <div class="right">
-          <div class="contact">
-            <div class="phone"><i class="fas fa-phone-square"></i><span>{{item.tel}}</span></div>
-            <div class="mail"><i class="fas fa-envelope-square"></i><span>{{item.email}}</span></div>
+          <div class="left">
+            <p>{{item.intro}}</p>
+            <div class="infos">
+              <li>Address</li><span>{{item.addr}}</span><br/>
+              <li>Open-time</li><span>{{item.open}}</span>
+            </div>
+            <div class="links"><a class="fb" v-bind:href="item.fb" target="_blank"><i class="fab fa-facebook-f"></i></a><a class="web" v-bind:href="item.web" target="_blank"><i class="fas fa-ellipsis-h"></i></a></div>
+          </div>
+          <div class="right">
+            <div class="contact">
+              <div class="phone"><i class="fas fa-phone-square"></i><span>{{item.tel}}</span></div>
+              <div class="mail"><i class="fas fa-envelope-square"></i><span>{{item.email}}</span></div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div id="map"></div>
-    </section>
-    <footer>
-      <p>資料來源：雜學校｜Za Share</p>
-    </footer>
-  </div><a class="dot move_top" href="#brief_area"><i class="fas fa-angle-down"></i></a>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js"></script>
-  <script src="js/index.js"></script>
-</body>
+      </section>
+      <section>
+        <div id="map"></div>
+      </section>
+      <footer>
+        <p>資料來源：雜學校｜Za Share</p>
+      </footer>
+    </div><a class="dot move_top" href="#brief_area"><i class="fas fa-angle-down"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js"></script>
+    <script src="js/index.js"></script>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYrmvf8Pg0awTHB4UQxjjymENhg717Qk&amp;callback=initMap"></script>
+  </body>
+</html>
