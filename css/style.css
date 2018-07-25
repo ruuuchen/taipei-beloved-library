@@ -163,7 +163,6 @@ header {
 
 #map {
   width: 100%;
-  min-width: 280px;
   height: 550px;
   margin: 0px auto; }
 
@@ -259,8 +258,8 @@ footer {
 
   header {
     position: relative;
-    height: 600px;
-    padding: 200px 30px;
+    height: 500px;
+    padding: 160px 30px;
     color: #3A0088; }
     header h1 {
       font-size: 24px; }
@@ -304,7 +303,7 @@ footer {
     margin-bottom: 20px; }
 
   .dot {
-    top: 400px; }
+    top: 320px; }
     .dot:hover i {
       transform: translateX(-50%) translateY(-50%) rotate(0deg); } }
 
